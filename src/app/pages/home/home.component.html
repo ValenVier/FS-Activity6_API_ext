@@ -1,1 +1,7 @@
-<p>home works!</p>
+<section class="container mt-3 ">
+    <div class="row g-3">
+        <article class="col-12 col-md-6 col-lg-4 col-xl-3" *ngFor="let user of arrUsers">
+            <app-user-card [miUser]="user"></app-user-card>
+        </article>
+    </div>
+</section>
