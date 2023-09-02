@@ -18,4 +18,20 @@ export class UsersService {
     return lastValueFrom(this.httpClient.get<Resource>(this.baseUrl));
   }
 
+  insert(formValue:any):Promise<User|any>{
+    return lastValueFrom(this.httpClient.post<User>(this.baseUrl,formValue));
+  }
+
+  getByIdPromise(_id:string):Promise<User|any>{
+    return lastValueFrom(this.httpClient.get<User>(`${this.baseUrl}${_id}`));
+  }
+
+  update(formValue:User):Promise<User|any>{
+    return lastValueFrom(this.httpClient.put<any>(`${this.baseUrl}${formValue._id}`, formValue));
+  }
+
+  deleteUser(_id:string):Promise<User|any>{
+    return lastValueFrom(this.httpClient.delete<any>(`${this.baseUrl}${_id}`));
+  }
+
 }

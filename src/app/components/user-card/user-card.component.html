@@ -1,5 +1,5 @@
 <div class="card shadow p-4">
-    <figure class="imagen2">
+    <figure class="">
         <img [src]="miUser?.image" [alt]="miUser?.username" class="img-fluid">
     </figure>
     <h5 class="card-title text-center mt-3">{{miUser?.first_name}} {{miUser?.last_name}}</h5>
@@ -12,7 +12,7 @@
             </svg>
             <p class="text-center letra m-0 p-0">Ver Detalle</p>
         </a>
-        <a [routerLink]="['/viewuser', miUser?._id]" class="btn btn-warning boton">
+        <a [routerLink]="['/updateuser', miUser?._id]" class="btn btn-warning boton">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                 class="bi bi-arrow-repeat" viewBox="0 0 16 16">
                 <path
