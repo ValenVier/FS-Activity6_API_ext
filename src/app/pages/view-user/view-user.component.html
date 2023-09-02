@@ -1,1 +1,20 @@
-<p>view-user works!</p>
+<section class="d-flex col-md-10 mx-auto mt-3 card shadow p-3">
+    <section class="row">
+        <div class="col-12 col-md-6 border-end border-dark p-4 text-center">
+            <figure class="">
+                <img [src]="theUser?.image" [alt]="theUser?.username" class="img-fluid imagen">
+            </figure>
+        </div>
+        <div class="col-12 col-md-6 p-4">
+            <h3 class="mt-3">{{theUser?.first_name}}</h3>
+            <h3 class="mt-3">{{theUser?.last_name}}</h3>
+            <p class="mt-3"><strong>Nombre Usuario:</strong> {{theUser?.username}}</p>
+            <p class="mt-3"><strong>Email:</strong> {{theUser?.email}}</p>
+            <div class="mt-3">
+                <button class="btn btn-danger me-1" (click)="deleteUser(theUser?._id)">Eliminar</button>
+                <a class="btn btn-warning mx-1" [routerLink]="['/updateuser',theUser?._id]">Actualizar</a>
+                <a class="btn btn-info ms-1" [routerLink]="['/home']">Volver al listado</a>
+            </div>
+        </div>
+    </section>
+</section>
