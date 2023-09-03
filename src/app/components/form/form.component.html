@@ -1,5 +1,5 @@
 <section class="container mt-3 card shadow p-3">
-    <h3 class="text-uppercase">Nuevo usuario</h3>
+    <h3 class="text-uppercase">{{formTitle}} usuario</h3>
     <hr class="mt-0 pt-0">
     <form [formGroup]="userForm" (ngSubmit)="getDataForm()">
         <div class="mt-1">
@@ -13,11 +13,13 @@
         <div class="mt-3">
             <label for="email" class="form-label">Email Usuario</label>
             <input id="email" type="text" placeholder="Introduce el Email" class="form-control" formControlName="email">
+            <p class="error" *ngIf="checkControl('email','emailvalidator')">{{userForm.get('email')?.errors?.['emailvalidator']}}</p>
         </div>
         <div class="mt-3">
             <label for="image" class="form-label">Imagen Usuario</label>
             <input id="image" type="text" placeholder="Introduce el Email" class="form-control" formControlName="image">
+            <p class="error" *ngIf="checkControl('image','imagevalidator')">{{userForm.get('image')?.errors?.['imagevalidator']}}</p>
         </div>
-        <input type="submit" class="btn btn-danger mt-3" value="Guardar">
+        <input type="submit" class="btn btn-danger mt-3" value={{formButton}} [disabled]="!userForm.valid">
     </form>
 </section>
