@@ -12,6 +12,7 @@ export class HomeComponent {
   objResources: Resource;
   arrUsers: User[] = [];
   usersServices = inject(UsersService);
+  page!:number; 
 
   constructor() {
     this.objResources = {
