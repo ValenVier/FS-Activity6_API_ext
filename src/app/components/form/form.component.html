@@ -13,12 +13,12 @@
         <div class="mt-3">
             <label for="email" class="form-label">Email Usuario</label>
             <input id="email" type="text" placeholder="Introduce el Email" class="form-control" formControlName="email">
-            <p class="error" *ngIf="checkControl('email','emailvalidator')">{{userForm.get('email')?.errors?.['emailvalidator']}}</p>
+            <p class="error" *ngIf="checkControl('email','emailvalidator')">{{userForm.get('email')?.errors?.['emailvalidator']}}</p><!-- Validador -->
         </div>
         <div class="mt-3">
             <label for="image" class="form-label">Imagen Usuario</label>
             <input id="image" type="text" placeholder="Introduce el Email" class="form-control" formControlName="image">
-            <p class="error" *ngIf="checkControl('image','imagevalidator')">{{userForm.get('image')?.errors?.['imagevalidator']}}</p>
+            <p class="error" *ngIf="checkControl('image','imagevalidator')">{{userForm.get('image')?.errors?.['imagevalidator']}}</p><!-- validador -->
         </div>
         <input type="submit" class="btn btn-danger mt-3" value={{formButton}} [disabled]="!userForm.valid">
     </form>

@@ -1,3 +1,4 @@
+/* estilos para las validaciones del formulario */
 input.ng-invalid.ng-touched{
     border-bottom: 3px solid tomato;
 }

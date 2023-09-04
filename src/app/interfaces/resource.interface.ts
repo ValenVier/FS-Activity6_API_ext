@@ -1,3 +1,4 @@
+/* Este interfaz contiene la forma del objeto que se recoge de la página */
 import { User } from "./user.interface";
 
 export interface Resource {
