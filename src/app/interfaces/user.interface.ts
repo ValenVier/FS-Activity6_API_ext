@@ -1,3 +1,4 @@
+/* este interfaz solo contiene la forma de los datos de usuario relevantes  */
 export interface User {
     "_id"?: string;
     "id": number;

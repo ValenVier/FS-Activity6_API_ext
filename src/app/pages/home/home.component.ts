@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { Resource } from 'src/app/interfaces/resource.interface';
 import { User } from 'src/app/interfaces/user.interface';
 import { UsersService } from 'src/app/services/users.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-home',
@@ -12,7 +13,7 @@ export class HomeComponent {
   objResources: Resource;
   arrUsers: User[] = [];
   usersServices = inject(UsersService);
-  page!:number; 
+  page!:number; /* atributo para la paginación */
 
   constructor() {
     this.objResources = {
@@ -25,14 +26,17 @@ export class HomeComponent {
   }
 
   async ngOnInit(): Promise<void> {
-    var a: User | any;
     try {
       this.objResources = await this.usersServices.getAll();
       this.arrUsers = this.objResources.results
     } catch (error) {
-      console.log(error);
+      Swal.fire({
+        title: 'Ha habido un problema al recuperar los datos. Recargue la página. Error: '+ error,
+        showDenyButton: false,
+        showCancelButton: false,
+        confirmButtonText: 'Cerrar',
+      });
     }
   }
-
 
 }
